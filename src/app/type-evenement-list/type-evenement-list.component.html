@@ -167,11 +167,14 @@
                                             delete typeEvenement </button></td>
                                             <td class="cell">      
 
-                                                <button class="btn btn-sm btn-warning"  [routerLink]="'/typeEvenement/create'">
-                                                    <!--      <button [routerLink]="'url'"> Button Label</button>
+                                                <button class="btn btn-sm btn-warning"  [routerLink]="'/typeEvenement/show'" 
+                                                
+                                                [queryParams]="{ _id: typeEvenement._id}"
+                                                    >
+                                                    <!--      [routerLink]="['/books']" [queryParams]="{ orderby: 'price'}
                                                     
                                                     -->
-                                                      create typeEvenement </button>
+                                                      update typeEvenement </button>
                                             </td>                                      
                                     </tr>
                                 </tbody>
