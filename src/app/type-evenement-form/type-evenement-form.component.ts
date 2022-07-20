@@ -1,4 +1,8 @@
+
+
 import { Component, OnInit } from '@angular/core';
+import {TypeEvenement} from "../model/typeEvenement";
+import {TypeEvenementService} from "../services/type-evenement.service";
 
 @Component({
   selector: 'app-type-evenement-form',
@@ -6,10 +10,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./type-evenement-form.component.css']
 })
 export class TypeEvenementFormComponent implements OnInit {
+  typeEvenement: TypeEvenement;
 
-  constructor() { }
+  constructor(private typeEvenementService:TypeEvenementService) { }
 
   ngOnInit(): void {
+    this.typeEvenement= new TypeEvenement();
+  }
+  save(){
+    //
+ //   this.book.nbrLike=0;
+    this.typeEvenementService.addTypeEvenement(this.typeEvenement).subscribe();
+    //notify
+
   }
 
 }
+
+
+
