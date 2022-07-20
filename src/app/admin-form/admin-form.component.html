@@ -1,0 +1,151 @@
+
+<!--
+    _id: string;
+    nom : string;
+    prenom: String;
+    email: string;
+    dateNaiss: string;
+    image: string;
+    adresse : string;
+    numTel : string;
+    password : string;
+    dateCre : string;
+    dateupdate : Date;  //{type:Date,default:Date.now},
+    isActive : boolean;
+    role : string;
+
+-->
+
+
+
+
+<h1>Add a new Admin</h1>
+<form #f="ngForm">
+  <div class="form-group">
+    <label>nom:</label>
+    <input type="text" name="nom" class="form-control"
+           [(ngModel)]="admin.nom" required minlength="5"
+           pattern="[a-zA-Z]+$" #t="ngModel">
+  </div><br>
+  <!---msg alert---->
+  <div class="alert alert-danger" *ngIf="t.invalid && t.touched">
+    <div *ngIf="t.hasError('required')">this field is required</div>
+    <div *ngIf="t.hasError('minlength')">this field minlength is equal to 5</div>
+    <div *ngIf="t.hasError('pattern')">pattern error</div>
+  </div>
+
+  <div class="form-group">
+    <label>prenom:</label>
+    <input type="text" name="prenom" class="form-control"
+           [(ngModel)]="admin.prenom" required #a="ngModel">
+  </div><br>
+  <!---msg alert---->
+  <div class="alert alert-danger" *ngIf="a.invalid">
+    prenom this field is required
+  </div>
+  <div class="form-group">
+    <label>email:</label>
+    <input type="text" name="email" class="form-control"
+           [(ngModel)]="admin.email" required #b="ngModel">
+  </div><br>
+  <!---msg alert---->
+  <div class="alert alert-danger" *ngIf="b.invalid">
+    email field is required
+  </div>
+  <div class="form-group">
+    <label>dateNaiss:</label>
+    <input type="text" name="dateNaiss" class="form-control"
+           [(ngModel)]="admin.dateNaiss" required #c="ngModel">
+  </div><br>
+  <!---msg alert---->
+  <div class="alert alert-danger" *ngIf="c.invalid">
+    dateNaiss  field is required
+  </div>
+
+  <div class="form-group">
+    <label>image:</label>
+    <input type="text" name="image" class="form-control"
+           [(ngModel)]="admin.image" required #d="ngModel">
+  </div><br>
+  <!---msg alert---->
+  <div class="alert alert-danger" *ngIf="d.invalid">
+    image  field is required
+  </div>
+
+  <div class="form-group">
+    <label>adresse:</label>
+    <input type="text" name="adresse" class="form-control"
+           [(ngModel)]="admin.adresse" required #e="ngModel">
+  </div><br>
+  <!---msg alert---->
+  <div class="alert alert-danger" *ngIf="e.invalid">
+    adresse  field is required
+  </div>
+  
+  <div class="form-group">
+    <label>numTel:</label>
+    <input type="text" name="numTel" class="form-control"
+           [(ngModel)]="admin.numTel" required #f="ngModel">
+  </div><br>
+  <!---msg alert---->
+  <div class="alert alert-danger" *ngIf="f.invalid">
+    numTel  field is required
+  </div>
+
+  <div class="form-group">
+    <label>password:</label>
+    <input type="text" name="password" class="form-control"
+           [(ngModel)]="admin.password" required #g="ngModel">
+  </div><br>
+  <!---msg alert---->
+  <div class="alert alert-danger" *ngIf="g.invalid">
+    password  field is required
+  </div>
+
+  
+  <div class="form-group">
+    <label>dateCre:</label>
+    <input type="text" name="dateCre" class="form-control"
+           [(ngModel)]="admin.dateCre" required #h="ngModel">
+  </div><br>
+  <!---msg alert---->
+  <div class="alert alert-danger" *ngIf="h.invalid">
+    dateCre  field is required
+  </div>
+
+  <div class="form-group">
+    <label>dateupdate:</label>
+    <input type="text" name="dateupdate" class="form-control"
+           [(ngModel)]="admin.dateupdate" required #i="ngModel">
+  </div><br>
+  <!---msg alert---->
+  <div class="alert alert-danger" *ngIf="i.invalid">
+    dateupdate  field is required
+  </div>
+  
+  <div class="form-group">
+    <label>isActive:</label>
+    <input type="text" name="isActive" class="form-control"
+           [(ngModel)]="admin.isActive" required #j="ngModel">
+  </div><br>
+  <!---msg alert---->
+  <div class="alert alert-danger" *ngIf="j.invalid">
+    isActive  field is required
+  </div>
+
+  <div class="form-group">
+    <label>role:</label>
+    <input type="text" name="role" class="form-control"
+           [(ngModel)]="admin.role" required #k="ngModel">
+  </div><br>
+  <!---msg alert---->
+  <div class="alert alert-danger" *ngIf="k.invalid">
+    role  field is required
+  </div>
+
+ <!-- -----------------------------------> 
+  <button class="btn btn-success" (click)="save() " [routerLink]="'/admin'"
+          [disabled]="t.invalid || a.invalid || b.invalid || c.invalid || d.invalid || e.invalid || f.invalid || g.invalid || h.invalid || i.invalid || j.invalid || k.invalid || f.invalid">save
+  </button>
+</form>
+
