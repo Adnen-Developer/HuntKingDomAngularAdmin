@@ -22,9 +22,16 @@ export class TypeEvenementService {
      return this.http.delete(this.url+ "/delete/" +_id)
   }
   //update a book
+
   updateTypeEvenement(typeEvenement: TypeEvenement){
      return this.http.put(this.url + "/update/"+ typeEvenement._id, typeEvenement)
   }
+
+   getATypeEventById(_id: string) {
+
+         return this.http.get<TypeEvenement>(this.url + "/getTypeEvenementById/" + _id);
+      }
+
 }
 
 

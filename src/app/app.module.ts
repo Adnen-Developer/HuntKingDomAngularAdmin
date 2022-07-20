@@ -14,6 +14,9 @@ import { AdminDetailsComponent } from './admin-details/admin-details.component';
 import { TypeEvenementFormComponent } from './type-evenement-form/type-evenement-form.component';
 import { TypeEvenementListComponent } from './type-evenement-list/type-evenement-list.component';
 import { TypeEvenementDetailsComponent } from './type-evenement-details/type-evenement-details.component';
+import { EvenementListComponent } from './evenement-list/evenement-list.component';
+import { EvenementDetailsComponent } from './evenement-details/evenement-details.component';
+import { EvenementFormComponent } from './evenement-form/evenement-form.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,9 @@ import { TypeEvenementDetailsComponent } from './type-evenement-details/type-eve
     TypeEvenementFormComponent,
     TypeEvenementListComponent,
     TypeEvenementDetailsComponent,
+    EvenementListComponent,
+    EvenementDetailsComponent,
+    EvenementFormComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,18 +14,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TypeEvenementDetailsComponent implements OnInit {
   
+ 
   typeEvenement: TypeEvenement;
-
   _id: string;
 
   constructor(private route: ActivatedRoute, private typeEvenementService:TypeEvenementService) { }
 
-  
+
     
 
     ngOnInit() : void{
 
-      this.typeEvenement= new TypeEvenement();
+   
       
       this.route.queryParams
       .subscribe(params => {
@@ -33,15 +33,21 @@ export class TypeEvenementDetailsComponent implements OnInit {
         this._id = params._id;
         console.log(this._id); // price
       }
+
+      
+    );
+
+
+      this.typeEvenementService.getATypeEventById(this._id).subscribe(
+      (data:TypeEvenement)=> this.typeEvenement=data
     );
     
-
-
   }
-  save(){
+
+  updateEvent(){
     //
  //   this.book.nbrLike=0;
-    this.typeEvenementService.addTypeEvenement(this.typeEvenement).subscribe();
+    this.typeEvenementService.updateTypeEvenement(this.typeEvenement).subscribe();
     //notify
 
   }
