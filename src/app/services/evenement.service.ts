@@ -18,13 +18,29 @@ export class EvenementService {
      return this.http.post(this.url + "/add",evenement )
   }
   //delete a book
-  deleteEvenement(_id: string){
-     return this.http.delete(this.url + "/delete/" +_id)
+/*
+  deleteEvenement(_id: string, currentAdmin: any){
+     return this.http.delete(this.url + "/delete/" +_id + "?" + currentAdmin)
   }
+
+*/
+
+
+  deleteEvenement(_id: string){
+     return this.http.delete(this.url+ "/delete/" +_id)
+  }
+
   //update a book
   updateEvenement(evenement: Evenement){
      return this.http.put(this.url + "/update/" + evenement._id, evenement)
   }
+
+
+   getEvenementById(_id: string) {
+
+         return this.http.get<Evenement>(this.url + "/getEvenementById/" + _id);
+   }
+
 }
 
 

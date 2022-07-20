@@ -209,11 +209,17 @@
                                             delete evenement </button></td>
                                             <td *ngIf="evenement.isActive == true"   class="cell">      
 
-                                                <button class="btn btn-sm btn-warning"  [routerLink]="'/evenement/create'">
-                                                    <!--      <button [routerLink]="'url'"> Button Label</button>
-                                                    
+                                                <button class="btn btn-sm btn-warning"  [routerLink]="'/evenement/show'"
+
+                                                                        [queryParams]="{ _id: evenement._id}"
+                                                            >
+                                                    <!--      
+
+                                                                            [routerLink]="'/typeEvenement/show'" 
+                                                
+                                                [queryParams]="{ _id: typeEvenement._id}"                                                    
                                                     -->
-                                                      create evenement </button>
+                                                      update evenement </button>
                                             </td>                                            
                                         
                                     </tr>
@@ -256,11 +262,13 @@
                                             delete evenement </button></td>
                                             <td *ngIf="evenement.isActive == false"   class="cell">      
 
-                                                <button class="btn btn-sm btn-warning"  [routerLink]="'/evenement/create'">
+                                                <button class="btn btn-sm btn-warning"  [routerLink]="'/evenement/show'" 
+                                                
+                                                [queryParams]="{ _id: evenement._id}">
                                                     <!--      <button [routerLink]="'url'"> Button Label</button>
                                                     
                                                     -->
-                                                      create evenement </button>
+                                                      update evenement </button>
                                             </td>                                           
                                     </tr>
 

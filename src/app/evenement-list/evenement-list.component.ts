@@ -16,6 +16,7 @@ import {EvenementService} from "../services/evenement.service";
 export class EvenementListComponent implements OnInit {
   title: string;
   list: Evenement[];
+  currentAdmin : any;
   constructor(private evenementService: EvenementService ) {
   }
   ngOnInit(): void {
@@ -24,6 +25,10 @@ export class EvenementListComponent implements OnInit {
     this.evenementService.getList().subscribe(
       (data:Evenement[])=> this.list=data
     );
+
+
+
+    
   }
 
 

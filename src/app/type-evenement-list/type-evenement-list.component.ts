@@ -23,21 +23,7 @@ export class TypeEvenementListComponent implements OnInit {
     );
   }
 
-/*
-  incrementLike(book: Book): void{
-    let i = this.list.indexOf(book);
-    if(i!=-1){
-      this.list[i].nbrLike++;
-    }
-  }
-  buyBook(i:number):void{
-    this.list[i].quantity--;
-  }
- getStatBook(){
-    return this.calcul.getStat(this.list, 'quantity',0)
- }
 
- */
 
   delete(_id: string): void {
 
