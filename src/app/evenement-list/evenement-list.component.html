@@ -15,36 +15,36 @@
                         <div class="col-auto">
                             <form class="table-search-form row gx-1 align-items-center">
                                 <div class="col-auto" *ngIf="selectedSearchCriteria=='idEvenement'" >
-                                    <input type="text" id="search-orders" 
+                                    <input type="text" id="search-idEvenement" 
                                     [(ngModel)]="evenementIdFromTemplate" name="searchorders" class="form-control search-orders" placeholder="Search event by ID" 
                                     (keyup)="searchEvenementByIdKeyUp(evenementIdFromTemplate)">
                                 </div>
                                 <div class="col-auto" *ngIf="selectedSearchCriteria=='lieuEvenement'" >
-                                    <input type="text" id="search-orders" 
+                                    <input type="text" id="search-lieuEvenement" 
                                     [(ngModel)]="evenementIdFromTemplate" name="searchorders" class="form-control search-orders" placeholder="Search event by lieuEvenement" 
                                     (keyup)="searchEvenementByIdKeyUp(evenementIdFromTemplate)">
                                 </div>
                                 <div class="col-auto" *ngIf="selectedSearchCriteria=='idAdminCreateur'" >
-                                    <input type="text" id="search-orders" 
+                                    <input type="text" id="search-idAdminCreateur" 
                                     [(ngModel)]="evenementIdFromTemplate" name="searchorders" class="form-control search-orders" placeholder="Search event by idAdminCreateur" 
                                     (keyup)="searchEvenementByIdKeyUp(evenementIdFromTemplate)">
                                 </div>
                                 <div class="col-auto" *ngIf="selectedSearchCriteria=='instanceOrganistatrice'" >
-                                    <input type="text" id="search-orders" 
+                                    <input type="text" id="search-instanceOrganistatrice" 
                                     [(ngModel)]="evenementIdFromTemplate" name="searchorders" class="form-control search-orders" placeholder="Search event by instanceOrganistatrice" 
                                     (keyup)="searchEvenementByIdKeyUp(evenementIdFromTemplate)">
                                 </div>                                
  
                                 <div class="col-auto" *ngIf="selectedSearchCriteria=='filtreInactif'" >
-                                    <input type="text" id="search-orders" 
+                                    <input type="text" id="search-filtreInactif" 
                                     [(ngModel)]="lieuEvenementFiltreInactif" name="searchorders" class="form-control search-orders" placeholder="Search event by lieuEvenement" >
                                 </div>
                                 <div class="col-auto" *ngIf="selectedSearchCriteria=='filtreInactif'" >
-                                    <input type="text" id="search-orders" 
+                                    <input type="text" id="search-searchorders" 
                                     [(ngModel)]="idAdminCreateurFiltreInactif" name="searchorders" class="form-control search-orders" placeholder="Search event by idAdminCreateur" >
                                 </div>
                                 <div class="col-auto" *ngIf="selectedSearchCriteria=='filtreInactif'" >
-                                    <input type="text" id="search-orders" 
+                                    <input type="text" id="search-orers" 
                                     [(ngModel)]="instanceOrganistatriceFiltreInactif" name="searchorders" class="form-control search-orders" placeholder="Search event by instanceOrganistatrice" >
                                 </div>                                                                   
                                 <div class="col-auto">

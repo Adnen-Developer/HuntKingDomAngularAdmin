@@ -27,7 +27,7 @@ export class EvenementListComponent implements OnInit {
   lieuEvenementFiltreInactif :string; 
   idAdminCreateurFiltreInactif :string;
   instanceOrganistatriceFiltreInactif :string;
-
+  boolEvalKeyUp: boolean;
   constructor(private evenementService: EvenementService ) {
   }
   ngOnInit(): void {
@@ -36,6 +36,7 @@ export class EvenementListComponent implements OnInit {
     this.serachButtonClicked = false;
     this.selectedSearchCriteria = "idEvenement";
     this.boolEvalValue = false;
+    this.boolEvalKeyUp = false;
     this.evenementIdFiltreInactif = ""; 
     this.lieuEvenementFiltreInactif = ""; 
     this.idAdminCreateurFiltreInactif = "";
@@ -103,7 +104,7 @@ searchEvenementByIdKeyUp(evenementIdFromTemplate: string) {
     this.serachButtonClicked = false;
   }
 
-  if(evenementIdFromTemplate.length < 5) {
+  if(evenementIdFromTemplate.length < 3) {
 
     this.evenementService.getList().subscribe(
       (data:Evenement[])=> this.list=data
@@ -112,7 +113,7 @@ searchEvenementByIdKeyUp(evenementIdFromTemplate: string) {
   }  
 
   
-  if(evenementIdFromTemplate.length > 5) {
+  if(evenementIdFromTemplate.length >= 3) {
     this.list = [];
       
     
@@ -125,19 +126,41 @@ searchEvenementByIdKeyUp(evenementIdFromTemplate: string) {
   
         );
   
-        
-          if(this.evenementSearchedById._id != "") {
-            this.list = [];
-        this.list.push(this.evenementSearchedById);
-        }
+        if(this.evenementSearchedById._id != "") {
+          this.list = [];
+      this.list.push(this.evenementSearchedById);
+      }
 
       }
 
-      if(this.selectedSearchCriteria == "lieuEvenement") {}
+      if(this.selectedSearchCriteria == "lieuEvenement") {
 
-      if(this.selectedSearchCriteria == "idAdminCreateur") {}
+        this.evenementService.getEvenementByLieu(evenementIdFromTemplate).subscribe(
 
-      if(this.selectedSearchCriteria == "instanceOrganistatrice") {}
+          (data:Evenement[])=>  this.list = data
+  
+        );
+
+      }
+
+      if(this.selectedSearchCriteria == "idAdminCreateur") {
+
+        this.evenementService.getEvenementByIdAdminCreateur(evenementIdFromTemplate).subscribe(
+
+          (data:Evenement[])=>  this.list = data
+  
+        );
+
+      }
+
+      if(this.selectedSearchCriteria == "instanceOrganistatrice") {
+
+        this.evenementService.getEvenementByInstanceOrganisatrice(evenementIdFromTemplate).subscribe(
+
+          (data:Evenement[])=>  this.list = data
+  
+        );
+      }
       
     
 
@@ -159,21 +182,18 @@ searchEvenementByParams(lieuEvenementFiltreInactif :string,
       (data:Evenement[])=> this.list=data
     );
 
-    this.boolEvalValue = (lieuEvenementFiltreInactif.length > 5) && (idAdminCreateurFiltreInactif.length > 5) && (instanceOrganistatriceFiltreInactif.length > 5);
+    this.boolEvalValue = (lieuEvenementFiltreInactif.length > 2) && (idAdminCreateurFiltreInactif.length > 2) && (instanceOrganistatriceFiltreInactif.length > 2);
     if(this.boolEvalValue) {
       this.list = [];
 
     this.evenementService.getEvenementByMaxParams(lieuEvenementFiltreInactif, idAdminCreateurFiltreInactif, 
       instanceOrganistatriceFiltreInactif).subscribe(
 
-        (data:Evenement)=>  this.evenementSearchedById = data
+        (data:Evenement[])=>  this.list = data
 
       );
 
-      if(this.evenementSearchedById._id != "") {
-        this.list = [];
-    this.list.push(this.evenementSearchedById);
-    }
+
 
   }
 }

@@ -49,32 +49,30 @@ export class EvenementService {
 getEvenementByInstanceOrganisatrice(instanceOrganisatirice: string) {
 
 
-      return this.http.get<Evenement>(this.url + "/getEvenementByInstanceOrganisatirice/" + instanceOrganisatirice);
+      return this.http.get<Evenement[]>(this.url + "/getEvenementByInstanceOrganisatirice/" + instanceOrganisatirice);
 }
 
 getEvenementByIdAdminCreateur(idAdminCreateur: string) {
 
 
-   return this.http.get<Evenement>(this.url + "/getEvenementByIdAdminCreateur/" + idAdminCreateur);
+   return this.http.get<Evenement[]>(this.url + "/getEvenementByIdAdminCreateur/" + idAdminCreateur);
 }
 
 getEvenementByLieu(lieu: string) {
 
 
-   return this.http.get<Evenement>(this.url + "/getEvenementByLieu/" + lieu);
+   return this.http.get<Evenement[]>(this.url + "/getEvenementByLieu/" + lieu);
 }
 
 
 getEvenementByMaxParams(lieuEvenementFiltreInactif :string, 
    idAdminCreateurFiltreInactif :string, instanceOrganistatriceFiltreInactif :string) {
       /*
-      /getEvenementByParams/?instanceOrganisatirice=MBRE&adminId=62d68589080f9ed423d5dae9&lieu=MEMBRE
-
+localhost:3000/evenement/getEvenementByParams/
+?instanceOrganisatirice=MBRE&adminId=62d68589080f9ed423d5dae9&lieu=MEMBRE
       */
 
-      return this.http.get<Evenement>(this.url + "/getEvenementByParams/" + `?instanceOrganisatirice
-      =${instanceOrganistatriceFiltreInactif}&
-      adminId=${idAdminCreateurFiltreInactif}&lieu=${instanceOrganistatriceFiltreInactif}`);      
+      return this.http.get<Evenement[]>(this.url + "/getEvenementByParams/" + "?instanceOrganisatirice="+instanceOrganistatriceFiltreInactif+ "&adminId=" +idAdminCreateurFiltreInactif +"&lieu=" +lieuEvenementFiltreInactif);      
    }
 
 }
