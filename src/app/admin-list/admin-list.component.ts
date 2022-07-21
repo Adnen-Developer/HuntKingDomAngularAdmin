@@ -17,6 +17,7 @@ import {AdminService} from "../services/admin.service";
 export class AdminListComponent implements OnInit {
   title: string;
   list: Admin[];
+  nameTitle: string = "AdminList";
   constructor(private adminService: AdminService ) {
   }
   ngOnInit(): void {
