@@ -13,7 +13,7 @@ import {TypeEvenementService} from "../services/type-evenement.service";
 export class TypeEvenementListComponent implements OnInit {
   title: string;
   list: TypeEvenement[];
-  nameTitle: string = "AdminList";
+  nameTitle: string = "TypeEvenement ";
   constructor(private typeEvenementService: TypeEvenementService ) {
   }
   ngOnInit(): void {

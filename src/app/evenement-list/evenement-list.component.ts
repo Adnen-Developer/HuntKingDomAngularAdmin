@@ -41,7 +41,7 @@ export class EvenementListComponent implements OnInit {
     this.lieuEvenementFiltreInactif = ""; 
     this.idAdminCreateurFiltreInactif = "";
     this.instanceOrganistatriceFiltreInactif = "";
-
+    this.nameTitle = "EvenementList";
 
     this.evenementService.getList().subscribe(
       (data:Evenement[])=> this.list=data
