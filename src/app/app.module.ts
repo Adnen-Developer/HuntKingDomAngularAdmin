@@ -7,7 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { AdminFormComponent } from './admin-form/admin-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminListComponent } from './admin-list/admin-list.component';
 import { AdminDetailsComponent } from './admin-details/admin-details.component';
@@ -17,6 +17,15 @@ import { TypeEvenementDetailsComponent } from './type-evenement-details/type-eve
 import { EvenementListComponent } from './evenement-list/evenement-list.component';
 import { EvenementDetailsComponent } from './evenement-details/evenement-details.component';
 import { EvenementFormComponent } from './evenement-form/evenement-form.component';
+import { MembreListComponent } from './membre-list/membre-list.component';
+import { LoginComponent } from './login/login.component';
+import { Login1Component } from './login1/login1.component';
+import { RouterModule } from '@angular/router';
+import { ProfilComponent } from './profil/profil.component';
+import { ProfilmembreComponent } from './profilmembre/profilmembre.component';
+import { MembreupdateComponent } from './membreupdate/membreupdate.component';
+
+
 
 @NgModule({
   declarations: [
@@ -33,12 +42,24 @@ import { EvenementFormComponent } from './evenement-form/evenement-form.componen
     EvenementListComponent,
     EvenementDetailsComponent,
     EvenementFormComponent,
+    MembreListComponent,
+    LoginComponent,
+    Login1Component,
+    ProfilComponent,
+    ProfilmembreComponent,
+    MembreupdateComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+
+
+    RouterModule,
+    
+    ReactiveFormsModule
     
   ],
   providers: [],

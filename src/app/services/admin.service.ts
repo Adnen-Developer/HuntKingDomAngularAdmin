@@ -9,20 +9,32 @@ import {HttpClient} from "@angular/common/http";
 export class AdminService {
    url: string = environment.url  + "/admin";
    constructor(private http: HttpClient) { }
-   //get Books
+   //get Admins
    getList(){
      return this.http.get<Admin[]>(this.url + "/")
    }
-   //add a new Book
+   //add a new Admin
   addAdmin(admin:Admin){
      return this.http.post(this.url + "/add",admin )
   }
-  //delete a book
+  //delete an Admin
   deleteAdmin(_id: string){
      return this.http.delete(this.url + "/delete/" +_id)
   }
-  //update a book
+  //update an Admin
   updateAdmin(admin: Admin){
      return this.http.put(this.url + "/update/" + admin._id, admin)
   }
+
+  getAdminById(_id: string) {
+
+   return this.http.get<Admin>(this.url + "/getAdminById/" + _id);
+}
+
+
+login(user:any){
+   return this.http.post<{message:any, connectedUser : any}>(this.url + '/login',user);
+ }
+
+
 }

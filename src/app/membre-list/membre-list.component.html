@@ -1,16 +1,16 @@
-<div class="app-content pt-3 p-md-3 p-lg-4"  *ngIf="adminIsConnected == true">
+<div class="app-content pt-3 p-md-3 p-lg-4">
     <div class="container-xl">
         
         <div class="row g-3 mb-4 align-items-center justify-content-between">
             <div class="col-auto">
-                <h1 class="app-page-title mb-0">Liste des Administrateurs</h1>
+                <h1 class="app-page-title mb-0">Liste des Membres</h1>
             </div>
             <div class="col-auto">
                  <div class="page-utilities">
                     <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
                         <div class="col-auto">
-                            <button class="btn btn-sm btn-danger"  [routerLink]="'/admin/create'">
-                                Créer un Admin </button>
+                            <button class="btn btn-sm btn-danger"  [routerLink]="'/membre/create'">
+                                Créer un Membre </button>
                         </div>
                         <div class="col-auto">
                             <form class="table-search-form row gx-1 align-items-center">
@@ -49,7 +49,7 @@
        
         
         <nav id="orders-table-tab" class="orders-table-tab app-nav-tabs nav shadow-sm flex-column flex-sm-row mb-4" role="tablist">
-            <a class="flex-sm-fill text-sm-center nav-link active" id="orders-all-tab" data-bs-toggle="tab" href="#orders-all" role="tab" aria-controls="orders-all" aria-selected="false">Liste des Admins</a>
+            <a class="flex-sm-fill text-sm-center nav-link active" id="orders-all-tab" data-bs-toggle="tab" href="#orders-all" role="tab" aria-controls="orders-all" aria-selected="false">Liste des Membres</a>
             
         </nav>
         
@@ -78,24 +78,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let admin of list, let i= index">
+                                    <tr *ngFor="let membre of list, let i= index">
 
-                                        <td class="cell">{{admin.nom}}</td>
-                                        <td class="cell"><span class="truncate">{{admin.prenom}}</span></td>
-                                        <td class="cell"><span class="truncate">{{admin._id}}</span></td>
-                                        <td class="cell">{{admin.email}}</td>
-                                        <td class="cell">{{admin.numTel}}</td>
-                                        <td class="cell">{{admin.adresse}}</td>
-                                        <td class="cell">{{admin.dateCre}}</td>
-                                        <td class="cell">{{admin.dateupdate}}</td>
-                                        <td class="cell"><span class="badge bg-success">{{admin.isActive}}</span></td>
-                                        <td> <button class="btn btn-sm btn-danger"  [routerLink]="'/profil'" [queryParams]="{ _id: admin._id}">
+                                        <td class="cell">{{membre.nom}}</td>
+                                        <td class="cell"><span class="truncate">{{membre.prenom}}</span></td>
+                                        <td class="cell"><span class="truncate">{{membre._id}}</span></td>
+                                        <td class="cell">{{membre.email}}</td>
+                                        <td class="cell">{{membre.numTel}}</td>
+                                        <td class="cell">{{membre.adresse}}</td>
+                                        <td class="cell">{{membre.dateCre}}</td>
+                                        <td class="cell">{{membre.dateupdate}}</td>
+                                        <td class="cell"><span class="badge bg-success">{{membre.isActive}}</span></td>
+                                        <td> <button class="btn btn-sm btn-danger"  [routerLink]="'/membre/profilmembre'" [queryParams]="{ _id: membre._id}">
                                            Voir </button></td>
-                                        <td> <button class="btn btn-sm btn-warning"  [routerLink]="'/admin/update'" [queryParams]="{ _id: admin._id}" >
+                                        <td> <button class="btn btn-sm btn-warning"  [routerLink]="'/membre/update'" [queryParams]="{ _id: membre._id}" >
                                             Mettre à jour </button></td>
                                         
-                                        <td><button class="btn btn-sm btn-warning" [disabled]="admin.isActive == true" (click)="delete(admin._id)">
-                                              delete admin </button>
+                                        <td><button class="btn btn-sm btn-warning" [disabled]="membre.isActive == true" (click)="delete(membre._id)">
+                                              Supprimer membre </button>
                                           </td>
                                     </tr>
 

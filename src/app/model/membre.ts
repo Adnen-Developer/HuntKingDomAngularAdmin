@@ -1,16 +1,17 @@
-
-export class Membre {
-
-    nom : string;
-    prenom: string;
-    email: string;
-    dateNaiss: string;
-    image: string;
-    adresse : string;
-    numTel : string;
-    password : string;
-    dateCre : Date; 
-    dateupdate : Date; 
-    isActive : boolean;
-    role : string;
+export class Membre{
+    
+    _id: string;
+    nom : String;
+    prenom: String;
+    email: String;
+    dateNaiss: String;
+    image: String;
+    adresse : String;
+    numTel : String;
+    password : String;
+    dateCre : Date ;
+    dateupdate : Date;
+    isActive : Boolean;
+    role : String
+    
 }
